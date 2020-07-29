@@ -9,6 +9,7 @@ from sklearn.impute import SimpleImputer
 import warnings
 warnings.filterwarnings("ignore")
 
+# Processing configuration
 NUMERICAL_COLUMNS = ['Pickup_longitude', 'Pickup_latitude', 'Dropoff_longitude', 
                      'Dropoff_latitude', 'Passenger_count', 'Total_amount', 'Trip_distance']
 
@@ -60,14 +61,9 @@ def _process_file(fpath):
     # Process individual file
     df = df.drop(COLUMNS_TO_DROP, axis=1)
     
-#     preprocess = make_column_transformer(
-#         (OneHotEncoder(), CATEGORICAL_COLUMNS),
-#         (StandardScaler(), NUMERICAL_COLUMNS)
-#     )    
     preprocess = make_column_transformer(
         (CATEGORICAL_COLUMNS, OneHotEncoder()),
         (NUMERICAL_COLUMNS, StandardScaler())
-#         (NUMERICAL_COLUMNS, MinMaxScaler(feature_range=(0, 1), copy=False))
     )    
     processed_np = preprocess.fit_transform(df)
     
