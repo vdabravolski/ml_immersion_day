@@ -23,7 +23,7 @@ This will incur a cost of $0.38 for training the model.
 This Cloudformation template creates a Lambda function with a sample Dockerfile that launches a Codebuild job
 to build a Sagemaker specific container. 
 
-Launch CloudFormation stack in us-east-1: [![button](media/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template?stackName=lambda-docker-build-maskrcnn&templateURL=https://lambda-ml-layers.s3.amazonaws.com/lambda-sm-build-maskrcnn.yaml)
+Launch CloudFormation stack in us-east-1: [![button](media/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template?stackName=lambda-docker-build-maskrcnn&templateURL=https://vadimd-public-us1.s3.amazonaws.com/lambda-sm-build-maskrcnn.yaml)
 
 If you would like to edit this ^ cloud formation template before deploying, you may download it from [here](https://lambda-ml-layers.s3.amazonaws.com/lambda-sm-build-maskrcnn.yaml)
 
@@ -31,7 +31,7 @@ SageMaker Containers gives you tools to create SageMaker-compatible Docker conta
 
 # Step 2: Clone this repo to your SageMaker Notebook instance
 ```bash
-git clone https://github.com/aws-samples/aws-stepfunctions-byoc-mlops-using-data-science-sdk.git
+git clone https://github.com/vdabravolski/ml_immersion_day
 ```
 
 # Step 3: Run the Jupyter Notebook.
